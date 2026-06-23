@@ -1,0 +1,24 @@
+{
+  "tests": [
+    {
+      "name": "Создание новой заявки",
+      "method": "POST",
+      "path": "/",
+      "body": {"client_name": "Тест Тестов", "client_phone": "+7 900 000-00-00", "device_type": "phone", "device_model": "Test Phone", "issue": "Тестовая поломка", "master": "Тест Мастер", "status": "diag", "price": 1000},
+      "expectedStatus": 200
+    },
+    {
+      "name": "Получение списка заявок",
+      "method": "GET",
+      "path": "/",
+      "expectedStatus": 200
+    },
+    {
+      "name": "Валидация пустой заявки",
+      "method": "POST",
+      "path": "/",
+      "body": {"client_name": "", "client_phone": "", "device_model": ""},
+      "expectedStatus": 400
+    }
+  ]
+}
